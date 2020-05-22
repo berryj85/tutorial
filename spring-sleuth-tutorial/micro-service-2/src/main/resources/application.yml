@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  sleuth:
+    http:
+      legacy:
+        enabled: true
+    baggage:
+      remote-fields: X-Correlation-Id,X-Forwarded-For
+    sampler:
+      probability: 1
+    log:
+      slf4j:
+        whitelisted-mdc-keys: X-Correlation-Id,X-Forwarded-For
+    web.client.enabled: true
+    propagation-keys: X-Correlation-Id,X-Forwarded-For
+  profiles.active: tutorial
+logging:
+  pattern:
+    console: "%d %-5level %X{X-Correlation-Id:-} %X{X-Forwarded-For}: %msg%n"
