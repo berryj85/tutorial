@@ -1,15 +1,11 @@
 package berryj.tutorial.microservice.interceptor
 
-import brave.ScopedSpan
 import brave.Tracer
 import brave.propagation.ExtraFieldPropagation
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter
-import java.lang.Exception
-import java.lang.StringBuilder
 import java.util.*
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse

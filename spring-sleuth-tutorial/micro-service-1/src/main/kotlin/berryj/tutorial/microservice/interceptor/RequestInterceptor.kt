@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.servlet.HandlerInterceptor
-import java.lang.Exception
 import java.util.*
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
@@ -15,6 +14,7 @@ import javax.servlet.http.HttpServletResponse
 class RequestInterceptor : HandlerInterceptor {
     @Autowired
     private lateinit var tracer: Tracer
+
     companion object {
         private val log = LogManager.getLogger(RequestInterceptor::class.java)
     }
@@ -27,6 +27,7 @@ class RequestInterceptor : HandlerInterceptor {
         tracer.startScopedSpan("X-Correlation-Id")
         return true
     }
+
     override fun afterCompletion(request: HttpServletRequest, response: HttpServletResponse, handler: Any, ex: Exception?) {
         tracer.currentSpan().finish()
     }

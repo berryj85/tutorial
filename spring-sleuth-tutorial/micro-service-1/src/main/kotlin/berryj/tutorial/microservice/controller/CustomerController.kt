@@ -2,10 +2,7 @@ package berryj.tutorial.microservice.controller
 
 import berryj.tutorial.microservice.response.CustomerResponse
 import berryj.tutorial.microservice.service.CustomerService
-import brave.Request
 import brave.Tracing
-import brave.propagation.B3Propagation
-import brave.propagation.ExtraFieldPropagation
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Mono
-import java.util.*
 
 
 @RestController

@@ -5,7 +5,6 @@ import berryj.tutorial.microservice.exception.DataNotFoundException
 import org.apache.logging.log4j.LogManager
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono
-import reactor.core.scheduler.Scheduler
 import reactor.core.scheduler.Schedulers
 
 @Service
@@ -18,7 +17,7 @@ class CustomerService {
         return Mono.create<CustomerResponse> { sink ->
             if (id == "100")
                 sink.error(DataNotFoundException())
-Thread.sleep(2000)
+            Thread.sleep(2000)
             sink.success(CustomerResponse(id, "customer-name-$id"))
         }.subscribeOn(Schedulers.elastic())
                 .doFirst { log.info("Start CustomerService.getCustomerById($id)") }

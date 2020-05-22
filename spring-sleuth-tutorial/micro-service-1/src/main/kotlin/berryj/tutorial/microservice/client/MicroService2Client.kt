@@ -1,9 +1,6 @@
 package berryj.tutorial.microservice.client
 
 import berryj.tutorial.microservice.response.CustomerResponse
-import brave.propagation.ExtraFieldPropagation
-import org.apache.logging.log4j.ThreadContext
-import org.slf4j.MDC
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Component

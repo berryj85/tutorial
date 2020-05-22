@@ -2,7 +2,6 @@ package berryj.tutorial.microservice.service
 
 import berryj.tutorial.microservice.client.MicroService2Client
 import berryj.tutorial.microservice.response.CustomerResponse
-import berryj.tutorial.microservice.exception.DataNotFoundException
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service

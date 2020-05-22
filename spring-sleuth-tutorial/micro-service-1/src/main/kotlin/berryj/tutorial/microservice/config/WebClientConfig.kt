@@ -9,7 +9,7 @@ import reactor.netty.http.client.HttpClient
 import reactor.netty.tcp.TcpClient
 
 @Configuration
-class WebClientConfig{
+class WebClientConfig {
     @Bean
     fun httpClient(): HttpClient = HttpClient.from(TcpClient.create().secure { spec -> spec.sslContext(SslContextBuilder.forClient().build()).build() })
 
