@@ -1,0 +1,7 @@
+{
+  "customerId": 1,
+  "firstname": "FirstName",
+  "lastname": "LastName",
+  "phoneNumbers": ["089xxxxxx1", "089xxxxxx2"],
+  "activeStatus": true
+}
