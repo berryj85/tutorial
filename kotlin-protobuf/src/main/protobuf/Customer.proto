@@ -1,0 +1,17 @@
+//src/main/protobuf/Customer.proto
+syntax = "proto3";
+package berryj.tutorial.kotlinprotobuf.message;
+option java_package = "berryj.tutorial.kotlinprotobuf.message";
+option java_generic_services = true;
+option java_multiple_files = true;
+
+message Customer {
+    int32 customerId = 1;
+    string firstname = 2;
+    string lastname = 3;
+    repeated string phoneNumbers = 4;
+    bool activeStatus = 6;
+}
+message CustomerList{
+    repeated Customer customers = 1;
+}
