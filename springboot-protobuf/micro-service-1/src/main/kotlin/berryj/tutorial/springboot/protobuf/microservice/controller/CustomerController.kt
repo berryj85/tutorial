@@ -6,10 +6,7 @@ import berryj.tutorial.springboot.protobuf.microservice.service.CustomerService
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/customer", produces = ["application/x-protobuf", MediaType.APPLICATION_JSON_VALUE])
@@ -39,6 +36,21 @@ class CustomerController {
             log.info("End getAllCustomer {$it}")
         }
 
+    }
+
+    @PostMapping
+    fun insertCustomer(@RequestBody customer: Customer): Customer {
+        log.info("Payload insertCustomer{$customer}")
+        return customerService.insertCustomer(customer).let {
+            Customer.newBuilder().apply {
+                this.customerId = it?.customerId?.toInt() ?: 0
+                this.firstname = it?.firstname ?: ""
+                this.lastname = it?.lastname ?: ""
+                this.addAllPhoneNumbers(it?.phoneNumbers ?: listOf())
+                this.activeStatus = it?.activeStatus ?: true
+
+            }.build()
+        }
     }
 
     @GetMapping("/{customer_id}")
