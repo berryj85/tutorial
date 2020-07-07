@@ -10,7 +10,7 @@ message Customer {
     string firstname = 2;
     string lastname = 3;
     repeated string phoneNumbers = 4;
-    bool activeStatus = 6;
+    bool activeStatus = 5;
 }
 message CustomerList{
     repeated Customer customers = 1;

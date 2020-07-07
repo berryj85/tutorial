@@ -5,3 +5,4 @@ target
 tutorial.iml
 kotlin-protobuf/kotlin-protobuf.iml
 kotlin-protobuf/target
+**/*.iml
