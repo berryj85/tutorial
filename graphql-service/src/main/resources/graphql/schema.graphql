@@ -1,0 +1,17 @@
+schema {
+    query:Query
+}
+type Query{
+    getProduct(productId:String,productType:String):[Product]
+    getCustomer(id:String): [Customer]
+}
+type Product{
+    productId:ID
+    productName:String
+    productType:String
+    active:Boolean
+}
+type Customer{
+    customerId:ID
+
+}
