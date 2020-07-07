@@ -1,4 +1,4 @@
 .idea
-target
+*/target
 kotlin-protobuf/target
 **/*.iml
