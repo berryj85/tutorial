@@ -1,0 +1,5 @@
+type Product{
+    productId:ID
+    productName:String
+    productPrice:Float
+}

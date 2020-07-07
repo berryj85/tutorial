@@ -1,0 +1,9 @@
+#customer.graphql
+type Customer{
+    customerId:ID
+    customerName:String
+    email:String
+    phone:[String]
+    address:String
+    active:Boolean
+}

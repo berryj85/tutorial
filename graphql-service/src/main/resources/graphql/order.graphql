@@ -1,0 +1,11 @@
+type Order{
+    orderId:ID
+    customer:Customer
+    items:[OrderItem]
+    totalAmount:Int
+    totalPrice:Float
+}
+type OrderItem{
+    product(productId:String):Product
+    amount:Int
+}
