@@ -10,7 +10,7 @@ import java.util.*
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class CovidCase(
     @JsonProperty("ConfirmDate")
-    val confirmDate: String? = null,
+    var confirmDate: String? = null,
     @JsonProperty("No")
     val no: String? = null,
     @JsonProperty("Age")
