@@ -1,0 +1,8 @@
+server:
+  port: 9091
+
+spring:
+  config:
+    name: webflux-service
+  profiles:
+    active: demo
