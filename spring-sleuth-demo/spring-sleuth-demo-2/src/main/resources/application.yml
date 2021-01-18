@@ -1,0 +1,31 @@
+server:
+  port: 9092
+
+spring:
+  zipkin:
+    enabled: false
+  application:
+    name: spring-slueth-demo-2
+  profiles:
+    active: demo
+  sleuth:
+    span-filter:
+      enabled: true
+    enabled: true
+    baggage:
+      correlation-fields: 'X-Correlation-Id'
+      remote-fields: 'X-Correlation-Id'
+      local-fields: 'X-Client-Ip'
+    log:
+      slf4j:
+        enable: true
+    web:
+      webclient.enabled: true
+      client.enabled: true
+      skip-pattern: (\S*\/health$|\S*\/info$)
+app:
+  report.filename: /covid_reports.json
+logging:
+  level:
+    app: INFO
+  pattern.console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} | %-5level | %t | %X{X-Correlation-Id:-} | %X{X-Client-Ip:-} | %c{1} | %msg%n"
