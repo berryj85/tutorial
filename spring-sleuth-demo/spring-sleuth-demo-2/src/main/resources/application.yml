@@ -9,19 +9,13 @@ spring:
   profiles:
     active: demo
   sleuth:
-    span-filter:
-      enabled: true
     enabled: true
     baggage:
       correlation-fields: 'X-Correlation-Id'
       remote-fields: 'X-Correlation-Id'
       local-fields: 'X-Client-Ip'
-    log:
-      slf4j:
-        enable: true
     web:
       webclient.enabled: true
-      client.enabled: true
       skip-pattern: (\S*\/health$|\S*\/info$)
 app:
   report.filename: /covid_reports.json
