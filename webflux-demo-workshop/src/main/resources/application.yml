@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /webflux-demo
+
+spring:
+  profiles:
+    active: demo
+
+logging:
+  level:
+    app: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} | %-5level | %t | %msg%n"
