@@ -1,0 +1,14 @@
+server:
+  port: 8080
+logging:
+  interceptor:
+    enable: true
+    level: INFO
+    request:
+      enable: true
+      prefix: "RECIVE REQUEST"
+      enable-parameter: true
+      enable-header: true
+    response:
+      enable: true
+      prefix: "RESPONSE"

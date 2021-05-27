@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration
 val DEFAULT_EXCLUDE_URL = arrayListOf("**/info", "**/prometheus")
 
 
-@Configuration("logging")
+@Configuration("logging.interceptor")
 open class LoggingInterceptConfig(
     var enable: Boolean = true,
     var level: Level = Level.INFO,
