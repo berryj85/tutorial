@@ -22,7 +22,7 @@ class LoggingRequestDecorator(private val request: ServerHttpRequest, private va
             ByteArrayOutputStream().apply {
                 Channels.newChannel(this).write(dataBuffer.asByteBuffer().asReadOnlyBuffer())
             }.let { outputStream ->
-                this.log(StreamUtils.copyToString(outputStream, Charsets.UTF_8).replace("[\\n\\r\\t]".toRegex(), Strings.EMPTY))
+                this.log(StreamUtils.copyToString(outputStream, Charsets.UTF_8))
             }
         }
     }
