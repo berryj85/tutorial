@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    berryj85.logging.webflux.interceptor.filter.LoggingWebFilter, \
+    berryj85.logging.webflux.interceptor.config.LoggingInterceptConfig
