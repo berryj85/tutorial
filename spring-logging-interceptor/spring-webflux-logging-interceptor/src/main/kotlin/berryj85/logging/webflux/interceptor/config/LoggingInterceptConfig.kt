@@ -15,17 +15,14 @@ open class LoggingInterceptConfig(
     var response: LoggingResponseConfig = LoggingResponseConfig()
 )
 
-abstract class LoggingConfig {
-    var enable: Boolean = true
-    abstract var prefix: String
-}
-
 data class LoggingRequestConfig(
-    override var prefix: String = "REQUEST",
+    var enable: Boolean = true,
+    var prefix: String = "REQUEST",
     var enableParameter: Boolean = true,
     var enableHeader: Boolean = true
-) : LoggingConfig()
+)
 
 data class LoggingResponseConfig(
-    override var prefix: String = "RESPONSE"
-) : LoggingConfig()
+    var enable: Boolean = true,
+    var prefix: String = "RESPONSE"
+)
