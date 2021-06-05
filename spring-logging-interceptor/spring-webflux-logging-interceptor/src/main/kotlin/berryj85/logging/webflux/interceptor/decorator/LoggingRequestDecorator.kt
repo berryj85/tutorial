@@ -3,7 +3,6 @@ package berryj85.logging.webflux.interceptor.decorator
 import berryj85.logging.webflux.interceptor.config.LoggingInterceptConfig
 import berryj85.logging.webflux.interceptor.filter.LoggingWebFilter
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import org.apache.logging.log4j.util.Strings
 import org.springframework.core.io.buffer.DataBuffer
 import org.springframework.http.server.reactive.ServerHttpRequest
 import org.springframework.http.server.reactive.ServerHttpRequestDecorator
