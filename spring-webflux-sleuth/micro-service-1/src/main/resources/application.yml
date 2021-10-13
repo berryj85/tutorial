@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  sleuth:
+    baggage:
+      correlation-fields: Correlation-Id, Span-Id
+      remote-fields: Correlation-Id, X-Forwarded-For
+application:
+  micro-service-2:
+    url: http://localhost:8082/micro-service-2
+
+logging:
+  pattern:
+    console: "%d | %-5level | %X{Correlation-Id:-},%X{spanId:-} | %X{X-Forwarded-For} | %msg%n"
