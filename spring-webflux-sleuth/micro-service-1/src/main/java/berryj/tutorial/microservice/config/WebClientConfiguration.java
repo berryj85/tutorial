@@ -11,7 +11,7 @@ public class WebClientConfiguration {
     private String microService2Url;
 
     @Bean
-    public WebClient microServiceWebClient(){
+    public WebClient microServiceWebClient() {
         return WebClient.builder().baseUrl(microService2Url).build();
     }
 }
