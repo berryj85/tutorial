@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+spring:
+  sleuth:
+    baggage:
+      correlation-fields: Correlation-Id, Span-Id
+      remote-fields: Correlation-Id, X-Forwarded-For
+logging:
+  pattern:
+    console: "%d | %-5level | %X{Correlation-Id:-},%X{spanId:-} | %X{X-Forwarded-For} | %msg%n"
